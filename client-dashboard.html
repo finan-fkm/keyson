@@ -24,6 +24,7 @@
         <input type="file" id="fileInput" accept="image/*" multiple />
         <label for="fileInput">Choose Photos</label>
         <p style="margin: 10px 0 0; color: #64748b;">Only authorized client accounts can access this area.</p>
+        <p id="uploadStatus" style="margin: 10px 0 0; color: #0f172a; font-size: 14px;"></p>
       </div>
       <div class="actions">
         <button class="primary" id="saveBtn">Save Upload List</button>
@@ -41,6 +42,9 @@
     </section>
   </main>
 
+  <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-storage-compat.js"></script>
   <script src="client-dashboard.js"></script>
 </body>
 </html>

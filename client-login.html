@@ -95,23 +95,50 @@
     <div class="note">This page is not linked from the public website navigation.</div>
   </div>
 
+  <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-auth-compat.js"></script>
   <script>
-    const VALID_EMAIL = 'client@keysons.com';
-    const VALID_PASSWORD = 'Keysons@2026';
+    const firebaseConfig = {
+      apiKey: 'YOUR_API_KEY',
+      authDomain: 'YOUR_PROJECT_ID.firebaseapp.com',
+      projectId: 'YOUR_PROJECT_ID',
+      storageBucket: 'YOUR_PROJECT_ID.appspot.com',
+      messagingSenderId: 'YOUR_SENDER_ID',
+      appId: 'YOUR_APP_ID'
+    };
 
-    document.getElementById('loginForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const email = document.getElementById('email').value.trim();
-      const password = document.getElementById('password').value;
-      const errorMsg = document.getElementById('errorMsg');
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
 
-      if (email === VALID_EMAIL && password === VALID_PASSWORD) {
+    const loginForm = document.getElementById('loginForm');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const errorMsg = document.getElementById('errorMsg');
+
+    auth.onAuthStateChanged(function (user) {
+      if (user) {
         localStorage.setItem('clientAccess', 'true');
-        localStorage.setItem('clientEmail', email);
-        window.location.href = 'client-dashboard.html';
-      } else {
-        errorMsg.style.display = 'block';
+        localStorage.setItem('clientEmail', user.email || '');
+        window.location.replace('client-dashboard.html');
       }
+    });
+
+    loginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      errorMsg.style.display = 'none';
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then(function (userCredential) {
+          const user = userCredential.user;
+          localStorage.setItem('clientAccess', 'true');
+          localStorage.setItem('clientEmail', user.email || '');
+          window.location.replace('client-dashboard.html');
+        })
+        .catch(function () {
+          errorMsg.style.display = 'block';
+        });
     });
   </script>
 </body>
