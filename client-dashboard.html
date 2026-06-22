@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Dashboard | Keysons</title>
+  <link rel="stylesheet" href="client-dashboard.css" />
+</head>
+<body>
+  <header>
+    <h2>Client Upload Dashboard</h2>
+    <button id="logoutBtn">Logout</button>
+  </header>
+
+  <main>
+    <section class="card">
+      <h3>Welcome</h3>
+      <p id="clientName" class="notice">Loading...</p>
+    </section>
+
+    <section class="card">
+      <h3>Upload Product Photos</h3>
+      <div class="upload-area">
+        <input type="file" id="fileInput" accept="image/*" multiple />
+        <label for="fileInput">Choose Photos</label>
+        <p style="margin: 10px 0 0; color: #64748b;">Only authorized client accounts can access this area.</p>
+      </div>
+      <div class="actions">
+        <button class="primary" id="saveBtn">Save Upload List</button>
+        <button class="secondary" id="clearBtn">Clear Preview</button>
+      </div>
+      <div class="preview-grid" id="previewGrid"></div>
+    </section>
+
+    <section class="card">
+      <h3>Notes for the Website Team</h3>
+      <textarea id="notes" placeholder="Add product details, captions, image titles, or instructions for the team..."></textarea>
+      <div class="actions">
+        <button class="primary" id="saveNotesBtn">Save Notes</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="client-dashboard.js"></script>
+</body>
+</html>
