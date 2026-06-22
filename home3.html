@@ -119,7 +119,7 @@ Hero
 .hero{
     position:relative;
     min-height:100vh;
-    background:url("../images/hero.jpg") center center/cover no-repeat;
+    background:url("656670.jpg") center center/cover no-repeat;
     display:flex;
     align-items:center;
 }
@@ -252,6 +252,65 @@ About
     color:#666;
     font-size:18px;
     line-height:1.9;
+}
+
+/*==========================
+Gallery
+==========================*/
+
+.gallery-section{
+    padding:90px 0;
+    background:#f7f9fc;
+}
+
+.gallery-section .section-title{
+    font-size:42px;
+    font-weight:700;
+    color:#0f172a;
+    margin-bottom:12px;
+}
+
+.gallery-section .section-text{
+    color:#64748b;
+    max-width:700px;
+    margin:0 auto 40px;
+}
+
+.gallery-card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(15,23,42,.08);
+    transition:transform .3s ease, box-shadow .3s ease;
+    height:100%;
+}
+
+.gallery-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 40px rgba(15,23,42,.12);
+}
+
+.gallery-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.gallery-card-body{
+    padding:18px;
+}
+
+.gallery-card-body h5{
+    font-size:18px;
+    font-weight:600;
+    color:#0f172a;
+    margin-bottom:8px;
+}
+
+.gallery-card-body p{
+    color:#64748b;
+    font-size:14px;
+    margin:0;
 }
 
 /*==========================
@@ -437,7 +496,11 @@ font-size:13px;
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="product.html">Product</a>
+                        <a class="nav-link" href="product.html">Products</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
                     </li>
 
                     <li class="nav-item">
@@ -519,6 +582,77 @@ font-size:13px;
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Gallery</h2>
+                <p class="section-text">A glimpse into our pharmaceutical, manufacturing, and corporate activities.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="gallery-card">
+                        <img src="9758861-european-pharma-days.jpg" alt="Pharmaceutical event">
+                        <div class="gallery-card-body">
+                            <h5>Pharma Event</h5>
+                            <p>Networking and innovation at our industry gatherings.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="gallery-card">
+                        <img src="IT-BRAEING-2025-05-08T115429.593.jpg" alt="Team collaboration">
+                        <div class="gallery-card-body">
+                            <h5>Team Collaboration</h5>
+                            <p>Dedicated teams working together to deliver quality.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="gallery-card">
+                        <img src="656670.jpg" alt="Manufacturing facility">
+                        <div class="gallery-card-body">
+                            <h5>Manufacturing Facility</h5>
+                            <p>Modern infrastructure supporting high-quality production.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="gallery-card">
+                        <img src="pharmaceutical-laboratory-with-people-manufacturing-medicine-background_507704-504.avif" alt="Lab work">
+                        <div class="gallery-card-body">
+                            <h5>Laboratory Research</h5>
+                            <p>Scientific processes that support reliable product development.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="gallery-card">
+                        <img src="ai-revolutionizes-pharmaceutical-industry-by-improving-speed-accuracy-drug-discovery-generated-by-ai_855332-509.avif" alt="AI in pharma">
+                        <div class="gallery-card-body">
+                            <h5>Innovation in Pharma</h5>
+                            <p>Leveraging technology to improve efficiency and accuracy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="gallery-card">
+                        <img src="East-West-Pharma.webp" alt="Pharmaceutical distribution">
+                        <div class="gallery-card-body">
+                            <h5>Distribution Network</h5>
+                            <p>Wide reach and dependable supply support across markets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- WhatsApp -->
 

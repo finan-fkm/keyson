@@ -491,6 +491,27 @@ body{
     white-space:nowrap;
 }
 
+.buy-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    margin-top:14px;
+    padding:10px 12px;
+    border-radius:10px;
+    background:#25D366;
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.buy-btn:hover{
+    background:#1da851;
+    color:#fff;
+}
+
 .pagination-box{
     display:flex;
     justify-content:space-between;
@@ -702,6 +723,8 @@ body{
                         <span class="price">$5.00 USD</span>
                         <span class="capsules">60 Capsules</span>
                     </div>
+
+                    <a class="buy-btn" href="#" data-product="Scalpcare Biotin Tablets" data-price="$5.00 USD" data-pack="60 Capsules">Buy on WhatsApp</a>
                 </div>
             </div>
 
@@ -718,6 +741,8 @@ body{
                         <span class="price">$3.90 USD</span>
                         <span class="capsules">50 Capsules</span>
                     </div>
+
+                    <a class="buy-btn" href="#" data-product="Optigut Probiotic Blend Tablets" data-price="$3.90 USD" data-pack="50 Capsules">Buy on WhatsApp</a>
                 </div>
             </div>
 
@@ -740,6 +765,8 @@ body{
 
                         <span class="capsules">40 Capsules</span>
                     </div>
+
+                    <a class="buy-btn" href="#" data-product="Gutbalance Prebiotic Tablets" data-price="$4.90 USD" data-pack="40 Capsules">Buy on WhatsApp</a>
                 </div>
             </div>
 
@@ -756,6 +783,8 @@ body{
                         <span class="price">$6.00 USD</span>
                         <span class="capsules">80 Capsules</span>
                     </div>
+
+                    <a class="buy-btn" href="#" data-product="Vitality Boost Hair Tablets" data-price="$6.00 USD" data-pack="80 Capsules">Buy on WhatsApp</a>
                 </div>
             </div>
 
@@ -778,6 +807,8 @@ body{
 
                         <span class="capsules">30 Capsules</span>
                     </div>
+
+                    <a class="buy-btn" href="#" data-product="Agedefy Retinol Tablets" data-price="$2.90 USD" data-pack="30 Capsules">Buy on WhatsApp</a>
                 </div>
             </div>
 
@@ -794,6 +825,8 @@ body{
                         <span class="price">$4.90 USD</span>
                         <span class="capsules">45 Capsules</span>
                     </div>
+
+                    <a class="buy-btn" href="#" data-product="Immunity Elite Herbal Tablets" data-price="$4.90 USD" data-pack="45 Capsules">Buy on WhatsApp</a>
                 </div>
             </div>
 
@@ -810,6 +843,8 @@ body{
                         <span class="price">$9.00 USD</span>
                         <span class="capsules">70 Capsules</span>
                     </div>
+
+                    <a class="buy-btn" href="#" data-product="Harmony Biotic Digestive Tablets" data-price="$9.00 USD" data-pack="70 Capsules">Buy on WhatsApp</a>
                 </div>
             </div>
 
@@ -832,6 +867,8 @@ body{
 
                         <span class="capsules">80 Capsules</span>
                     </div>
+
+                    <a class="buy-btn" href="#" data-product="Scalp Replenish Hair Tablets" data-price="$7.00 USD" data-pack="80 Capsules">Buy on WhatsApp</a>
                 </div>
             </div>
 
@@ -848,7 +885,7 @@ body{
     </div>
 </section>
 
-    <a href="#" class="whatsapp">
+    <a href="https://wa.me/9061504694" class="whatsapp" target="_blank" rel="noopener noreferrer">
 
         <i class="bi bi-whatsapp"></i>
 
@@ -857,3 +894,12 @@ body{
 
     <script src="js/script.js"></script>
 <script src="script.js"></script>
+<script>
+    document.querySelectorAll('.buy-btn').forEach(function(button) {
+        const product = button.dataset.product || 'This product';
+        const price = button.dataset.price || 'Price not specified';
+        const pack = button.dataset.pack || 'Pack size not specified';
+        const message = `Hello, I would like to buy ${product}. Price: ${price}. Pack size: ${pack}. Please share availability and delivery details.`;
+        button.href = `https://wa.me/9061504694?text=${encodeURIComponent(message)}`;
+    });
+</script>
