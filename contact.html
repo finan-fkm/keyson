@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Keysons Group</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+<style>
+    /*==========================
+  Google Font
+==========================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
+
+/*==========================
+Navbar
+==========================*/
+
+.navbar{
+    padding:18px 0;
+    transition:.3s;
+    background:#fff;
+}
+
+.navbar-brand img{
+    height:58px;
+}
+
+.navbar-nav .nav-link{
+    color:#222;
+    font-size:17px;
+    font-weight:500;
+    margin:0 12px;
+    position:relative;
+    transition:.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active{
+    color:#0d6efd;
+}
+
+.navbar-nav .nav-link::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:#0d6efd;
+    transition:.3s;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after{
+    width:100%;
+}
+
+/*==========================
+Social Icons
+==========================*/
+
+.social-icons{
+    display:flex;
+    gap:15px;
+}
+
+.social-icons a{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:1px solid #ddd;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#111;
+    text-decoration:none;
+    transition:.3s;
+    font-size:18px;
+}
+
+.social-icons a:hover{
+    background:#0d6efd;
+    color:#fff;
+    border-color:#0d6efd;
+}
+
+/*==========================
+Hero
+==========================*/
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    background:url("../images/hero.jpg") center center/cover no-repeat;
+    display:flex;
+    align-items:center;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,25,60,.72);
+}
+
+.hero .container{
+    position:relative;
+    z-index:2;
+}
+
+.hero-small{
+    color:#1f8cff;
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:3px;
+    display:inline-block;
+    border-bottom:2px solid #1f8cff;
+    padding-bottom:8px;
+    margin-bottom:30px;
+}
+
+.hero h1{
+    color:#fff;
+    font-size:78px;
+    font-weight:800;
+    line-height:1.1;
+}
+
+.hero h1 span{
+    color:#0d6efd;
+}
+
+.hero p{
+    color:#d7d7d7;
+    font-size:24px;
+    line-height:1.8;
+    margin:35px 0;
+    max-width:760px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.hero-buttons .btn{
+    padding:16px 36px;
+    border-radius:6px;
+    font-size:18px;
+    font-weight:600;
+}
+
+.btn-primary{
+    background:#0d6efd;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#0b5ed7;
+}
+
+.btn-outline-light:hover{
+    color:#000;
+}
+
+/*==========================
+Scroll
+==========================*/
+
+.scroll-text{
+    position:absolute;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%);
+    color:#fff;
+    text-align:center;
+    letter-spacing:3px;
+    font-size:14px;
+    z-index:5;
+}
+
+.scroll-text .line{
+    width:2px;
+    height:55px;
+    background:#fff;
+    margin:12px auto 0;
+    animation:scrollLine 1.8s infinite;
+}
+
+@keyframes scrollLine{
+
+0%{
+height:15px;
+opacity:.3;
+}
+
+50%{
+height:55px;
+opacity:1;
+}
+
+100%{
+height:15px;
+opacity:.3;
+}
+
+}
+
+/*==========================
+About
+==========================*/
+
+#about{
+    padding:100px 0;
+}
+
+#about h2{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+#about p{
+    color:#666;
+    font-size:18px;
+    line-height:1.9;
+}
+
+/*==========================
+WhatsApp
+==========================*/
+
+.whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:65px;
+    height:65px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    text-decoration:none;
+    font-size:34px;
+    z-index:999;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.08);
+    color:#fff;
+}
+
+/*==========================
+Tablet
+==========================*/
+
+@media(max-width:992px){
+
+.navbar{
+padding:12px 0;
+}
+
+.navbar-collapse{
+padding-top:20px;
+}
+
+.navbar-nav{
+text-align:center;
+}
+
+.navbar-nav .nav-link{
+margin:12px 0;
+}
+
+.hero{
+text-align:center;
+}
+
+.hero h1{
+font-size:55px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.scroll-text{
+display:none;
+}
+
+}
+
+/*==========================
+Mobile
+==========================*/
+
+@media(max-width:768px){
+
+.hero{
+padding-top:100px;
+}
+
+.hero-small{
+font-size:14px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.7;
+}
+
+.hero-buttons .btn{
+width:100%;
+}
+
+#about h2{
+font-size:32px;
+}
+
+.whatsapp{
+width:55px;
+height:55px;
+font-size:28px;
+right:15px;
+bottom:15px;
+}
+
+}
+
+/*==========================
+Small Mobile
+==========================*/
+
+@media(max-width:480px){
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.hero-small{
+letter-spacing:2px;
+font-size:13px;
+}
+
+}
+/*=====================================
+      Contact Section
+======================================*/
+
+.contact-section{
+
+    background:#f8f9fb;
+
+    padding:110px 0;
+
+}
+
+.contact-tag{
+
+    color:#0d6efd;
+
+    font-size:15px;
+
+    letter-spacing:4px;
+
+    font-weight:600;
+
+}
+
+.contact-title{
+
+    font-size:52px;
+
+    font-weight:800;
+
+    color:#071c3c;
+
+    margin:18px 0;
+
+}
+
+.contact-text{
+
+    max-width:650px;
+
+    margin:auto;
+
+    font-size:20px;
+
+    color:#55657d;
+
+    line-height:1.7;
+
+}
+
+/* Left */
+
+.contact-info{
+
+    background:#041938;
+
+    color:#fff;
+
+    padding:60px 40px;
+
+    height:100%;
+
+}
+
+.contact-info h3{
+
+    font-size:38px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.contact-info>p{
+
+    color:#b9c4d3;
+
+    margin-bottom:45px;
+
+}
+
+.info-box{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-bottom:45px;
+
+}
+
+.icon{
+
+    width:52px;
+
+    height:52px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:10px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}
+
+.icon i{
+
+    color:#fff;
+
+    font-size:20px;
+
+}
+
+.info-box h5{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+}
+
+.info-box span{
+
+    color:#c7d2e2;
+
+    line-height:1.8;
+
+}
+
+/* Map */
+
+.map-box{
+
+    height:100%;
+
+}
+
+.map-box iframe{
+
+    width:100%;
+
+    height:100%;
+
+    min-height:620px;
+
+    border:0;
+
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.contact-title{
+
+font-size:38px;
+
+}
+
+.map-box iframe{
+
+min-height:450px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.contact-section{
+
+padding:70px 0;
+
+}
+
+.contact-title{
+
+font-size:30px;
+
+}
+
+.contact-text{
+
+font-size:17px;
+
+}
+
+.contact-info{
+
+padding:40px 25px;
+
+}
+
+.contact-info h3{
+
+font-size:28px;
+
+}
+
+.map-box iframe{
+
+min-height:350px;
+
+}
+
+}
+/*==============================
+        FOOTER
+==============================*/
+
+.footer{
+
+    background:#02152f;
+
+    padding:90px 0 30px;
+
+    color:#fff;
+
+}
+
+.footer-logo{
+
+    width:170px;
+
+    margin-bottom:35px;
+
+}
+
+.footer-about{
+
+    color:#b7c3d6;
+
+    line-height:1.9;
+
+    font-size:18px;
+
+    max-width:340px;
+
+}
+
+.footer h4{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+.footer-line{
+
+    width:42px;
+
+    height:3px;
+
+    background:#0d6efd;
+
+    margin-bottom:35px;
+
+}
+
+.footer ul{
+
+    padding:0;
+
+    margin:0;
+
+    list-style:none;
+
+}
+
+.footer ul li{
+
+    margin-bottom:22px;
+
+}
+
+.footer ul li a{
+
+    color:#b7c3d6;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+    font-size:20px;
+
+}
+
+.footer ul li a:hover{
+
+    color:#fff;
+
+    padding-left:8px;
+
+}
+
+.social-icons{
+
+    display:flex;
+
+    gap:16px;
+
+    margin-bottom:35px;
+
+}
+
+.social-icons a{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    background:#0d2145;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+    font-size:22px;
+
+}
+
+.social-icons a:hover{
+
+    background:#0d6efd;
+
+    transform:translateY(-5px);
+
+}
+
+.footer-contact{
+
+    color:#b7c3d6;
+
+    font-size:20px;
+
+    margin-bottom:20px;
+
+}
+
+.footer hr{
+
+    margin:70px 0 25px;
+
+    border-color:rgba(255,255,255,.08);
+
+}
+
+.footer-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:#b7c3d6;
+
+    font-size:18px;
+
+}
+
+/*==============================
+      WhatsApp
+==============================*/
+
+.whatsapp{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:65px;
+
+    height:65px;
+
+    background:#25D366;
+
+    color:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+    text-decoration:none;
+
+    z-index:999;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+
+}
+
+.whatsapp:hover{
+
+    color:#fff;
+
+    transform:scale(1.08);
+
+}
+
+/*==============================
+        Responsive
+==============================*/
+
+@media(max-width:991px){
+
+.footer{
+
+text-align:center;
+
+}
+
+.footer-about{
+
+margin:auto;
+
+}
+
+.footer-line{
+
+margin:0 auto 30px;
+
+}
+
+.social-icons{
+
+justify-content:center;
+
+}
+
+.footer-bottom{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+}
+
+@media(max-width:767px){
+
+.footer{
+
+padding:70px 0 25px;
+
+}
+
+.footer h4{
+
+font-size:26px;
+
+}
+
+.footer ul li a{
+
+font-size:18px;
+
+}
+
+.footer-about{
+
+font-size:16px;
+
+}
+
+.footer-contact{
+
+font-size:18px;
+
+}
+
+.whatsapp{
+
+width:55px;
+
+height:55px;
+
+font-size:30px;
+
+right:15px;
+
+bottom:15px;
+
+}
+
+}
+</style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold" href="home3.html">
+                <img src="keysons_group.png" height="55" alt="">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbar">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="home3.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="companies.html">Companies</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="pharma.html">Pharma</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">Product</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+
+                <div class="social-icons d-none d-lg-flex">
+
+                    <a href="https://www.instagram.com/keysonsgroup/"><i class="bi bi-instagram"></i></a>
+
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+<!-- =========================================
+      CONTACT SECTION
+========================================= -->
+
+<section class="contact-section py-5" id="contact">
+
+    <div class="container" style="padding-top: 100px;">
+
+        <div class="text-center mb-5">
+
+            <span class="contact-tag">
+                GET IN TOUCH
+            </span>
+
+            <h2 class="contact-title">
+                Enterprise Contact & Support
+            </h2>
+
+            <p class="contact-text">
+                Reach out to our corporate headquarters or specific business
+                units for distributorship and supply inquiries.
+            </p>
+
+        </div>
+
+        <div class="row g-0 shadow rounded-4 overflow-hidden">
+
+            <!-- Left -->
+
+            <div class="col-lg-5">
+
+                <div class="contact-info">
+
+                    <h3>Corporate Headquarters</h3>
+
+                    <p>
+                        Submit your inquiries, and our commercial division
+                        will connect with you.
+                    </p>
+
+                    <!-- Phone -->
+
+                    <div class="info-box">
+
+                        <div class="icon">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+
+                        <div>
+
+                            <h5>Phone Number</h5>
+
+                            <span>+91 99999 99999 (Commercial)</span><br>
+
+                            <span>+91 95442 61416 (Support)</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Email -->
+
+                    <div class="info-box">
+
+                        <div class="icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+
+                        <div>
+
+                            <h5>Email Addresses</h5>
+
+                            <span>keysons@example.com</span><br>
+
+                            <span>fivostweb@gmail.com</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Address -->
+
+                    <div class="info-box">
+
+                        <div class="icon">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+
+                        <div>
+
+                            <h5>Registered Address</h5>
+
+                            <span>
+                                Keysons Groups,<br>
+                                Kottakkal, Kerala,<br>
+                                India - 676666
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="col-lg-7">
+
+                <div class="map-box">
+
+                    <iframe
+                        src="https://www.google.com/maps?q=KEYSONS GROUP, keysons tower, Atteeri - Iqlas Nagar Rd, soopy bazar, Kottakkal, Parappur, Kerala 676503&output=embed"
+                        loading="lazy"
+                        allowfullscreen="">
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+        FOOTER
+=========================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="row gy-5">
+
+            <!-- About -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <img src="keysons_2.png" class="footer-logo" alt="Logo">
+
+                <p class="footer-about">
+                    Keysons Group, founded in 2009 by Chairman Mujeeb Rahiman P.,
+                    specializes in the Pharmaceutical and FMCG sectors. The group
+                    focuses on quality service in distribution and stockist operations.
+                </p>
+
+            </div>
+
+            <!-- Quick Links -->
+
+            <div class="col-lg-2 col-md-6">
+
+                <h4>Quick Links</h4>
+
+                <div class="footer-line"></div>
+
+                <ul>
+
+                    <li><a href="#">Home</a></li>
+
+                    <li><a href="#">About Group</a></li>
+
+                    <li><a href="#">Subsidiaries</a></li>
+
+                    <li><a href="#">Contact Support</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Divisions -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <h4>Divisions</h4>
+
+                <div class="footer-line"></div>
+
+                <ul>
+
+                    <li><a href="#">Keysons Pharma</a></li>
+
+                    <li><a href="#">Keysons Enterprises</a></li>
+
+                    <li><a href="#">M&Co Trading</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Contact -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <h4>Connect</h4>
+
+                <div class="footer-line"></div>
+
+                <div class="social-icons">
+
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+
+                </div>
+
+                <p class="footer-contact">
+                    <strong>P:</strong> +91 9544261416
+                </p>
+
+                <p class="footer-contact">
+                    <strong>E:</strong> fivostweb@gmail.com
+                </p>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Keysons Group. All rights reserved.
+            </p>
+
+            <p>
+                Powered By : Fivost
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- WhatsApp -->
+
+<a href="https://wa.me/919544261416" class="whatsapp" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+    <a href="#" class="whatsapp">
+
+        <i class="bi bi-whatsapp"></i>
+
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/script.js"></script>

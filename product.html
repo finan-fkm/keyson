@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Keysons Group</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+<style>
+    /*==========================
+  Google Font
+==========================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
+
+/*==========================
+Navbar
+==========================*/
+
+.navbar{
+    padding:18px 0;
+    transition:.3s;
+    background:#fff;
+}
+
+.navbar-brand img{
+    height:58px;
+}
+
+.navbar-nav .nav-link{
+    color:#222;
+    font-size:17px;
+    font-weight:500;
+    margin:0 12px;
+    position:relative;
+    transition:.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active{
+    color:#0d6efd;
+}
+
+.navbar-nav .nav-link::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:#0d6efd;
+    transition:.3s;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after{
+    width:100%;
+}
+
+/*==========================
+Social Icons
+==========================*/
+
+.social-icons{
+    display:flex;
+    gap:15px;
+}
+
+.social-icons a{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:1px solid #ddd;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#111;
+    text-decoration:none;
+    transition:.3s;
+    font-size:18px;
+}
+
+.social-icons a:hover{
+    background:#0d6efd;
+    color:#fff;
+    border-color:#0d6efd;
+}
+
+/*==========================
+Hero
+==========================*/
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    background:url("../images/hero.jpg") center center/cover no-repeat;
+    display:flex;
+    align-items:center;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,25,60,.72);
+}
+
+.hero .container{
+    position:relative;
+    z-index:2;
+}
+
+.hero-small{
+    color:#1f8cff;
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:3px;
+    display:inline-block;
+    border-bottom:2px solid #1f8cff;
+    padding-bottom:8px;
+    margin-bottom:30px;
+}
+
+.hero h1{
+    color:#fff;
+    font-size:78px;
+    font-weight:800;
+    line-height:1.1;
+}
+
+.hero h1 span{
+    color:#0d6efd;
+}
+
+.hero p{
+    color:#d7d7d7;
+    font-size:24px;
+    line-height:1.8;
+    margin:35px 0;
+    max-width:760px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.hero-buttons .btn{
+    padding:16px 36px;
+    border-radius:6px;
+    font-size:18px;
+    font-weight:600;
+}
+
+.btn-primary{
+    background:#0d6efd;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#0b5ed7;
+}
+
+.btn-outline-light:hover{
+    color:#000;
+}
+
+/*==========================
+Scroll
+==========================*/
+
+.scroll-text{
+    position:absolute;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%);
+    color:#fff;
+    text-align:center;
+    letter-spacing:3px;
+    font-size:14px;
+    z-index:5;
+}
+
+.scroll-text .line{
+    width:2px;
+    height:55px;
+    background:#fff;
+    margin:12px auto 0;
+    animation:scrollLine 1.8s infinite;
+}
+
+@keyframes scrollLine{
+
+0%{
+height:15px;
+opacity:.3;
+}
+
+50%{
+height:55px;
+opacity:1;
+}
+
+100%{
+height:15px;
+opacity:.3;
+}
+
+}
+
+/*==========================
+About
+==========================*/
+
+#about{
+    padding:100px 0;
+}
+
+#about h2{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+#about p{
+    color:#666;
+    font-size:18px;
+    line-height:1.9;
+}
+
+/*==========================
+WhatsApp
+==========================*/
+
+.whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:65px;
+    height:65px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    text-decoration:none;
+    font-size:34px;
+    z-index:999;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.08);
+    color:#fff;
+}
+
+/*==========================
+Tablet
+==========================*/
+
+@media(max-width:992px){
+
+.navbar{
+padding:12px 0;
+}
+
+.navbar-collapse{
+padding-top:20px;
+}
+
+.navbar-nav{
+text-align:center;
+}
+
+.navbar-nav .nav-link{
+margin:12px 0;
+}
+
+.hero{
+text-align:center;
+}
+
+.hero h1{
+font-size:55px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.scroll-text{
+display:none;
+}
+
+}
+
+/*==========================
+Mobile
+==========================*/
+
+@media(max-width:768px){
+
+.hero{
+padding-top:100px;
+}
+
+.hero-small{
+font-size:14px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.7;
+}
+
+.hero-buttons .btn{
+width:100%;
+}
+
+#about h2{
+font-size:32px;
+}
+
+.whatsapp{
+width:55px;
+height:55px;
+font-size:28px;
+right:15px;
+bottom:15px;
+}
+
+}
+
+/*==========================
+Small Mobile
+==========================*/
+
+@media(max-width:480px){
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.hero-small{
+letter-spacing:2px;
+font-size:13px;
+}
+
+}
+ .banner{
+      width: 100%;
+      height: 100%;
+      background-image: url(656670.jpg);
+      background-size:cover ;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f5f7fb;
+}
+
+.portfolio-section{
+padding:90px 0;
+}
+
+.heading{
+max-width:700px;
+margin:auto;
+}
+
+.sub-title{
+color:#2563eb;
+font-size:13px;
+font-weight:700;
+letter-spacing:3px;
+display:block;
+margin-bottom:15px;
+}
+
+.heading h2{
+font-size:44px;
+font-weight:700;
+color:#0f172a;
+margin-bottom:20px;
+}
+
+.heading p{
+color:#64748b;
+line-height:30px;
+}
+
+.portfolio-card{
+position:relative;
+overflow:hidden;
+border-radius:12px;
+height:320px;
+cursor:pointer;
+box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.portfolio-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.5s;
+}
+
+.overlay{
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+padding:25px;
+background:linear-gradient(to top,
+rgba(2,15,40,.95),
+rgba(2,15,40,.25),
+transparent);
+color:#fff;
+transition:.4s;
+}
+
+.overlay h4{
+font-size:26px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.overlay p{
+font-size:14px;
+line-height:24px;
+color:#ddd;
+}
+
+.portfolio-card:hover img{
+transform:scale(1.1);
+}
+
+.portfolio-card:hover .overlay{
+padding-bottom:40px;
+}
+
+/* Tablet */
+
+@media(max-width:991px){
+
+.heading h2{
+font-size:34px;
+}
+
+.portfolio-card{
+height:280px;
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:576px){
+
+.portfolio-section{
+padding:60px 0;
+}
+
+.heading h2{
+font-size:28px;
+}
+
+.heading p{
+font-size:15px;
+}
+
+.portfolio-card{
+height:250px;
+}
+
+.overlay h4{
+font-size:22px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="keysons_group.png" height="55" alt="">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbar">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="home3.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="companies.html">Companies</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="pharma.html">Pharma</a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="product.html">Product</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+
+                <div class="social-icons d-none d-lg-flex">
+
+                    <a href="https://www.instagram.com/keysonsgroup/"><i class="bi bi-instagram"></i></a>
+
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+<section class="portfolio-section">
+
+<div class="container">
+
+<div class="heading text-center">
+
+<span class="sub-title">ECOSYSTEM</span>
+
+<h2>Product Portfolios We Manage</h2>
+
+<p>
+Across our subsidiaries, we distribute a structured,
+premium catalog of healthcare and essential hygiene supplies.
+</p>
+
+</div>
+
+<div class="row g-4 mt-4">
+
+<div class="col-lg-3 col-md-6">
+<div class="portfolio-card">
+<img src="pharma.png" alt=""><a href="pharma product.html">
+<div class="overlay">
+<h4>Pharmaceuticals</h4>
+<p>
+Essential prescription medicines and healthcare remedies.
+</p>
+</div>
+</div>
+</div>
+</a>
+<div class="col-lg-3 col-md-6">
+<div class="portfolio-card">
+<img src="enterprises.png" alt="">
+<div class="overlay">
+<h4>Surgical & Devices</h4>
+</div>
+</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+<div class="portfolio-card">
+<img src="trading.png" alt="">
+<div class="overlay">
+<h4>Feminine Hygiene</h4>
+</div>
+</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+<div class="portfolio-card">
+<img src="enterprises.png" alt=""><a href="babycare_products.html">
+<div class="overlay">
+<h4>Baby Care</h4>
+</div>
+</div>
+</div>
+</a>
+
+<div class="col-lg-3 col-md-6">
+<div class="portfolio-card">
+<img src="trading.png" alt="">
+<div class="overlay">
+<h4>Incontinence Care</h4>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+    <a href="#" class="whatsapp">
+
+        <i class="bi bi-whatsapp"></i>
+
+    </a>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/script.js"></script>

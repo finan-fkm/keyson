@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Keysons Group</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+<style>
+    /*==========================
+  Google Font
+==========================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
+
+/*==========================
+Navbar
+==========================*/
+
+.navbar{
+    padding:18px 0;
+    transition:.3s;
+    background:#fff;
+}
+
+.navbar-brand img{
+    height:58px;
+}
+
+.navbar-nav .nav-link{
+    color:#222;
+    font-size:17px;
+    font-weight:500;
+    margin:0 12px;
+    position:relative;
+    transition:.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active{
+    color:#0d6efd;
+}
+
+.navbar-nav .nav-link::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:#0d6efd;
+    transition:.3s;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after{
+    width:100%;
+}
+
+/*==========================
+Social Icons
+==========================*/
+
+.social-icons{
+    display:flex;
+    gap:15px;
+}
+
+.social-icons a{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:1px solid #ddd;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#111;
+    text-decoration:none;
+    transition:.3s;
+    font-size:18px;
+}
+
+.social-icons a:hover{
+    background:#0d6efd;
+    color:#fff;
+    border-color:#0d6efd;
+}
+
+/*==========================
+Hero
+==========================*/
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    background:url("../images/hero.jpg") center center/cover no-repeat;
+    display:flex;
+    align-items:center;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,25,60,.72);
+}
+
+.hero .container{
+    position:relative;
+    z-index:2;
+}
+
+.hero-small{
+    color:#1f8cff;
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:3px;
+    display:inline-block;
+    border-bottom:2px solid #1f8cff;
+    padding-bottom:8px;
+    margin-bottom:30px;
+}
+
+.hero h1{
+    color:#fff;
+    font-size:78px;
+    font-weight:800;
+    line-height:1.1;
+}
+
+.hero h1 span{
+    color:#0d6efd;
+}
+
+.hero p{
+    color:#d7d7d7;
+    font-size:24px;
+    line-height:1.8;
+    margin:35px 0;
+    max-width:760px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.hero-buttons .btn{
+    padding:16px 36px;
+    border-radius:6px;
+    font-size:18px;
+    font-weight:600;
+}
+
+.btn-primary{
+    background:#0d6efd;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#0b5ed7;
+}
+
+.btn-outline-light:hover{
+    color:#000;
+}
+
+/*==========================
+Scroll
+==========================*/
+
+.scroll-text{
+    position:absolute;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%);
+    color:#fff;
+    text-align:center;
+    letter-spacing:3px;
+    font-size:14px;
+    z-index:5;
+}
+
+.scroll-text .line{
+    width:2px;
+    height:55px;
+    background:#fff;
+    margin:12px auto 0;
+    animation:scrollLine 1.8s infinite;
+}
+
+@keyframes scrollLine{
+
+0%{
+height:15px;
+opacity:.3;
+}
+
+50%{
+height:55px;
+opacity:1;
+}
+
+100%{
+height:15px;
+opacity:.3;
+}
+
+}
+
+/*==========================
+About
+==========================*/
+
+#about{
+    padding:100px 0;
+}
+
+#about h2{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+#about p{
+    color:#666;
+    font-size:18px;
+    line-height:1.9;
+}
+
+/*==========================
+WhatsApp
+==========================*/
+
+.whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:65px;
+    height:65px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    text-decoration:none;
+    font-size:34px;
+    z-index:999;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.08);
+    color:#fff;
+}
+
+/*==========================
+Tablet
+==========================*/
+
+@media(max-width:992px){
+
+.navbar{
+padding:12px 0;
+}
+
+.navbar-collapse{
+padding-top:20px;
+}
+
+.navbar-nav{
+text-align:center;
+}
+
+.navbar-nav .nav-link{
+margin:12px 0;
+}
+
+.hero{
+text-align:center;
+}
+
+.hero h1{
+font-size:55px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.scroll-text{
+display:none;
+}
+
+}
+
+/*==========================
+Mobile
+==========================*/
+
+@media(max-width:768px){
+
+.hero{
+padding-top:100px;
+}
+
+.hero-small{
+font-size:14px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.7;
+}
+
+.hero-buttons .btn{
+width:100%;
+}
+
+#about h2{
+font-size:32px;
+}
+
+.whatsapp{
+width:55px;
+height:55px;
+font-size:28px;
+right:15px;
+bottom:15px;
+}
+
+}
+
+/*==========================
+Small Mobile
+==========================*/
+
+@media(max-width:480px){
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.hero-small{
+letter-spacing:2px;
+font-size:13px;
+}
+
+}
+/*=========================================
+    ABOUT SECTION
+=========================================*/
+
+.about-section{
+    background:#f8f9fb;
+    padding:100px 0;
+}
+
+.section-tag{
+    color:#0d6efd;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-weight:600;
+    font-size:15px;
+}
+
+.section-title{
+    font-size:52px;
+    font-weight:800;
+    color:#0b1c3d;
+    margin-bottom:20px;
+}
+
+.section-text{
+    max-width:760px;
+    margin:auto;
+    color:#5f6d7a;
+    font-size:20px;
+    line-height:1.8;
+}
+
+.about-section h3{
+    font-size:40px;
+    color:#0b1c3d;
+}
+
+.about-section p{
+    color:#556270;
+    line-height:1.9;
+    font-size:19px;
+}
+
+/*=========================================
+    STATISTICS
+=========================================*/
+
+.stat-card{
+    background:#fff;
+    border-radius:12px;
+    padding:30px;
+    height:100%;
+    border-left:4px solid #0d6efd;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+    transition:.35s;
+}
+
+.stat-card:hover{
+    transform:translateY(-8px);
+}
+
+.stat-card h2{
+    font-size:56px;
+    font-weight:800;
+    color:#0b1c3d;
+}
+
+.stat-card p{
+    margin-top:10px;
+    font-size:18px;
+    color:#666;
+}
+
+/*=========================================
+    TIMELINE
+=========================================*/
+
+.timeline-section{
+    background:#fff;
+    padding:100px 0;
+}
+
+.timeline{
+    position:relative;
+    max-width:1100px;
+    margin:auto;
+}
+
+.timeline::after{
+
+    content:"";
+    position:absolute;
+    width:3px;
+    background:#d9e3ef;
+    top:0;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.timeline-item{
+
+    position:relative;
+    width:50%;
+    padding:20px 40px;
+}
+
+.timeline-item.left{
+
+    left:0;
+    text-align:right;
+}
+
+.timeline-item.right{
+
+    left:50%;
+}
+
+.timeline-item::after{
+
+    content:"";
+    position:absolute;
+    width:20px;
+    height:20px;
+    background:#0d6efd;
+    border:6px solid #d9e9ff;
+    border-radius:50%;
+    top:40px;
+    z-index:5;
+}
+
+.timeline-item.left::after{
+
+    right:-10px;
+}
+
+.timeline-item.right::after{
+
+    left:-10px;
+}
+
+.timeline-content{
+
+    background:#fff;
+    border-radius:12px;
+    padding:35px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.timeline-content:hover{
+
+    transform:translateY(-8px);
+}
+
+.timeline-content h2{
+
+    color:#0d6efd;
+    font-size:48px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.timeline-content h4{
+
+    font-size:30px;
+    font-weight:700;
+    color:#0b1c3d;
+    margin-bottom:15px;
+}
+
+.timeline-content p{
+
+    color:#5f6d7a;
+    line-height:1.8;
+    font-size:18px;
+}
+
+/*=========================================
+    TABLET
+=========================================*/
+
+@media(max-width:991px){
+
+.section-title{
+
+font-size:40px;
+}
+
+.about-section h3{
+
+font-size:32px;
+}
+
+.timeline::after{
+
+left:20px;
+}
+
+.timeline-item{
+
+width:100%;
+padding-left:70px;
+padding-right:15px;
+margin-bottom:40px;
+}
+
+.timeline-item.left,
+.timeline-item.right{
+
+left:0;
+text-align:left;
+}
+
+.timeline-item.left::after,
+.timeline-item.right::after{
+
+left:10px;
+}
+
+.timeline-content h2{
+
+font-size:36px;
+}
+
+.timeline-content h4{
+
+font-size:24px;
+}
+
+}
+
+/*=========================================
+    MOBILE
+=========================================*/
+
+@media(max-width:768px){
+
+.about-section{
+
+padding:70px 0;
+}
+
+.section-title{
+
+font-size:32px;
+}
+
+.section-text{
+
+font-size:17px;
+}
+
+.about-section h3{
+
+font-size:28px;
+}
+
+.about-section p{
+
+font-size:17px;
+}
+
+.stat-card{
+
+padding:25px;
+}
+
+.stat-card h2{
+
+font-size:42px;
+}
+
+.timeline-content{
+
+padding:25px;
+}
+
+.timeline-content h2{
+
+font-size:32px;
+}
+
+.timeline-content h4{
+
+font-size:22px;
+}
+
+.timeline-content p{
+
+font-size:16px;
+}
+
+}
+/*=====================================
+   GROUP OF COMPANIES
+=====================================*/
+
+.companies-section{
+    background:#f5f7fb;
+    padding:100px 0;
+}
+
+.section-heading{
+    max-width:900px;
+    margin:auto;
+}
+
+.section-tag{
+    color:#0d6efd;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-weight:700;
+    font-size:15px;
+}
+
+.section-title{
+    font-size:56px;
+    font-weight:800;
+    color:#071c3f;
+}
+
+.section-text{
+    color:#5d6b7d;
+    font-size:22px;
+    line-height:1.8;
+    margin-top:25px;
+}
+
+/*=============================
+ COMPANY CARD
+==============================*/
+
+.company-card{
+
+    background:#fff;
+
+    border-radius:30px;
+
+    padding:70px;
+
+    margin-top:70px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.06);
+
+    transition:.4s;
+
+}
+
+.company-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.company-logo{
+
+    max-width:220px;
+
+    margin-bottom:25px;
+
+}
+
+.company-badge{
+
+    display:inline-block;
+
+    padding:12px 22px;
+
+    background:#edf4ff;
+
+    color:#0d6efd;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    border-radius:50px;
+
+    margin-left:15px;
+
+    vertical-align:middle;
+
+}
+
+.company-card h2{
+
+    margin-top:35px;
+
+    font-size:52px;
+
+    font-weight:800;
+
+    color:#071c3f;
+
+}
+
+.company-card p{
+
+    margin-top:30px;
+
+    font-size:22px;
+
+    color:#5b6777;
+
+    line-height:1.9;
+
+}
+
+.company-btn{
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    color:#0d6efd;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.company-btn:hover{
+
+    letter-spacing:1px;
+
+}
+
+.company-image{
+
+    width:100%;
+
+    border-radius:20px;
+
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+.company-card:hover .company-image{
+
+    transform:scale(1.03);
+
+}
+
+/*=============================
+ LARGE SCREEN
+==============================*/
+
+@media(max-width:1200px){
+
+.company-card{
+
+padding:50px;
+
+}
+
+.company-card h2{
+
+font-size:42px;
+
+}
+
+.company-card p{
+
+font-size:19px;
+
+}
+
+.section-title{
+
+font-size:46px;
+
+}
+
+}
+
+/*=============================
+ TABLET
+==============================*/
+
+@media(max-width:992px){
+
+.company-card{
+
+padding:40px;
+
+text-align:center;
+
+}
+
+.company-logo{
+
+margin:auto;
+
+display:block;
+
+}
+
+.company-badge{
+
+display:inline-block;
+
+margin:20px auto;
+
+}
+
+.company-card h2{
+
+font-size:36px;
+
+margin-top:25px;
+
+}
+
+.company-card p{
+
+font-size:18px;
+
+}
+
+.company-image{
+
+margin-top:30px;
+
+}
+
+.section-title{
+
+font-size:40px;
+
+}
+
+.section-text{
+
+font-size:18px;
+
+}
+
+}
+
+/*=============================
+ MOBILE
+==============================*/
+
+@media(max-width:768px){
+
+.companies-section{
+
+padding:70px 0;
+
+}
+
+.company-card{
+
+padding:25px;
+
+border-radius:20px;
+
+margin-top:40px;
+
+}
+
+.company-logo{
+
+max-width:170px;
+
+}
+
+.company-badge{
+
+font-size:12px;
+
+padding:10px 16px;
+
+margin-left:0;
+
+margin-top:15px;
+
+}
+
+.company-card h2{
+
+font-size:30px;
+
+}
+
+.company-card p{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.company-btn{
+
+font-size:18px;
+
+}
+
+.section-title{
+
+font-size:30px;
+
+}
+
+.section-text{
+
+font-size:16px;
+
+}
+
+}
+
+/*=============================
+ SMALL MOBILE
+==============================*/
+
+@media(max-width:480px){
+
+.company-card{
+
+padding:20px;
+
+}
+
+.company-logo{
+
+max-width:150px;
+
+}
+
+.company-card h2{
+
+font-size:26px;
+
+}
+
+.company-card p{
+
+font-size:15px;
+
+}
+
+.company-btn{
+
+font-size:17px;
+
+}
+
+}
+</style>
+</head>
+
+<body>
+    
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold" href="home3.html">
+                <img src="keysons_group.png" height="55" alt="">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbar">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="home3.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="companies.html">Companies</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="pharma.html">Pharma</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">Product</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+
+                <div class="social-icons d-none d-lg-flex">
+
+                    <a href="https://www.instagram.com/keysonsgroup/"><i class="bi bi-instagram"></i></a>
+
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+    <!-- =======================================
+     GROUP OF COMPANIES
+======================================= -->
+<section id="companies" class="companies-section py-5">
+
+    <div class="container" style="padding-top: 100px;">
+
+        <div class="section-heading text-center mb-5">
+
+            <span class="section-tag">
+                SUBSIDIARY DIVISIONS
+            </span>
+
+            <h2 class="section-title mt-3">
+                Our Group of Companies
+            </h2>
+
+            <p class="section-text mt-3">
+                Keysons Group operates as a parent holding company. Each subsidiary
+                functions as a dedicated enterprise unit handling healthcare,
+                distribution and supply-chain operations.
+            </p>
+
+        </div>
+
+        <!-- ==========================
+             COMPANY 1
+        =========================== -->
+
+        <div class="company-card">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+
+                    <img src="keysons_group.png"
+                         class="company-logo img-fluid">
+
+                    <span class="company-badge">
+                        PHARMACEUTICALS
+                    </span>
+
+                    <h2>Keysons Pharma</h2>
+
+                    <p>
+                        Keysons Pharma is a respected pharmaceutical
+                        distribution company committed to reliable
+                        healthcare supply and quality service across
+                        the state.
+                    </p>
+
+                    <a href="#" class="company-btn">
+                        Explore Division →
+                    </a>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <img src="pharma.png"
+                         class="company-image img-fluid">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================
+             COMPANY 2
+        =========================== -->
+
+        <div class="company-card">
+
+            <div class="row align-items-center g-5 flex-lg-row-reverse">
+
+                <div class="col-lg-6">
+
+                    <img src="keysons_enterprises.png"
+                         class="company-logo img-fluid">
+
+                    <span class="company-badge">
+                        DIVERSIFIED DISTRIBUTION
+                    </span>
+
+                    <h2>Keysons Enterprises</h2>
+
+                    <p>
+                        A diversified distribution company serving
+                        retail, institutional and healthcare markets
+                        with reliable logistics and customer-focused
+                        solutions.
+                    </p>
+
+                    <a href="#" class="company-btn">
+                        Contact Division →
+                    </a>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <img src="trading.png"
+                         class="company-image img-fluid">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================
+             COMPANY 3
+        =========================== -->
+
+        <div class="company-card">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+
+                    <img src="mandco.png"
+                         class="company-logo img-fluid">
+
+                    <span class="company-badge">
+                        FMCG & HYGIENE
+                    </span>
+
+                    <h2>M&Co Trading</h2>
+
+                    <p>
+                        M&Co Trading specializes in FMCG,
+                        hygiene products and logistics support
+                        with an extensive distribution network
+                        throughout the region.
+                    </p>
+
+                    <a href="#" class="company-btn">
+                        Contact Division →
+                    </a>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <img src="enterprises.png"
+                         class="company-image img-fluid">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <a href="#" class="whatsapp">
+
+        <i class="bi bi-whatsapp"></i>
+
+    </a>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/script.js"></script>
