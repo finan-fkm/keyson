@@ -1,0 +1,42 @@
+/* Fallback stylesheet for GitHub Pages deployment */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: #f7f9fc;
+  color: #1f2937;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.navbar {
+  background: #fff;
+}
+
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #0b1f4d, #0d6efd);
+  color: #fff;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-primary {
+  background: #0d6efd;
+  border-color: #0d6efd;
+}
